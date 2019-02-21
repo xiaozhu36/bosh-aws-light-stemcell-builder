@@ -36,7 +36,8 @@ pushd stemcells-index-output > /dev/null
 popd > /dev/null
 
 echo "Uploading light stemcell ${light_stemcell_name} to ${OUTPUT_BUCKET}..."
-aws s3 cp "${light_stemcell_path}" "s3://${OUTPUT_BUCKET}"
+#aws s3 cp "${light_stemcell_path}" "s3://${OUTPUT_BUCKET}"
+aliyun oss cp "${light_stemcell_path}" "oss://${OUTPUT_BUCKET}/${light_stemcell_path}" --access-key-id ${AWS_ACCESS_KEY_ID} --access-key-secret ${AWS_SECRET_ACCESS_KEY} --region ${AWS_DEFAULT_REGION}
 
 echo "Stemcell metalink"
 cat "$meta4_path"
