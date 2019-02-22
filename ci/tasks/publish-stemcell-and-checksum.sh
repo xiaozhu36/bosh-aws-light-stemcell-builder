@@ -25,7 +25,7 @@ STEMCELL_VERSION="$(bosh int /tmp/stemcell.MF --path /version)"
 
 git clone stemcells-index stemcells-index-output
 
-meta4_path=$PWD/stemcells-index-output/published/$OS_NAME/$STEMCELL_VERSION/stemcells.aws.meta4
+meta4_path=$PWD/stemcells-index-output/published/$OS_NAME/$STEMCELL_VERSION/stemcells.alicloud.meta4
 
 mkdir -p "$(dirname "${meta4_path}")"
 meta4 create --metalink="$meta4_path"
