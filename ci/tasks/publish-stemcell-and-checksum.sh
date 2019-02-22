@@ -11,8 +11,12 @@ set -eu
 # inputs
 light_stemcell_dir="$PWD/light-stemcell"
 
+echo "************ 14: $light_stemcell_dir"
+
 light_stemcell_path="$(echo ${light_stemcell_dir}/*.tgz)"
+echo "************ 17: $light_stemcell_path"
 light_stemcell_name="$(basename "${light_stemcell_path}")"
+echo "************ 19: $light_stemcell_name"
 
 tar -Oxf ${light_stemcell_path} stemcell.MF > /tmp/stemcell.MF
 
