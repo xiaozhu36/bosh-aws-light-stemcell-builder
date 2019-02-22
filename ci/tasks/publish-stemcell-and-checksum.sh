@@ -42,6 +42,9 @@ popd > /dev/null
 
 echo "Uploading light stemcell ${light_stemcell_name} to ${OUTPUT_BUCKET}..."
 #aws s3 cp "${light_stemcell_path}" "s3://${OUTPUT_BUCKET}"
+wget -q http://aliyun-cli.oss-cn-hangzhou.aliyuncs.com/aliyun-cli-linux-3.0.4-amd64.tgz
+tar -xzf aliyun-cli-linux-3.0.4-amd64.tgz -C /usr/bin
+
 aliyun oss cp "${light_stemcell_path}" "oss://${OUTPUT_BUCKET}/${light_stemcell_path}" --access-key-id ${AWS_ACCESS_KEY_ID} --access-key-secret ${AWS_SECRET_ACCESS_KEY} --region ${AWS_DEFAULT_REGION}
 
 echo "Stemcell metalink"
